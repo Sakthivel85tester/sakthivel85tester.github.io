@@ -78,11 +78,11 @@ function on_other(redir) {
 function on_load() {
      //   alert("done ");
     let p = get_param('t');
-    if (!p) {
-    	    alert("return1")
+    // if (!p) {
+    // 	    alert("return1")
 
-        return;
-    }
+    //     return;
+    // }
 
     make_page_map();
     if (on_ios(get_page(p, "iOS"))) return true;

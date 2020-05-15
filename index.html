@@ -65,6 +65,7 @@ function on_ios(redir) {
     if (detect(/iPad|iPhone|iPod/)) {
         return redirect(redir);
     }
+    alert("not ios")
 
     return false;
 }
@@ -74,7 +75,7 @@ function on_other(redir) {
 }
 
 function on_load() {
-        alert("done ");
+     //   alert("done ");
     let p = get_param('t');
     if (!p) {
         return;

@@ -79,7 +79,24 @@ function on_ios(redir) {
 
     return false;
 }
+function is_ios() {
 
+
+	  if (navigator.userAgent.match(/iPhone/i)  
+                || navigator.userAgent.match(/iPad/i)  
+                || navigator.userAgent.match(/iPod/i)) {
+	  	alert("detected ios");
+        return true;
+
+	  }
+    // if (detect(/iPad|iPhone|iPod/)) {
+    // 	alert("detected ios");
+    //     return redirect(redir);
+    // }
+    alert("not iosssss")
+
+    return false;
+}
 function on_other(redir) {
     return redirect(redir);
 }
@@ -93,9 +110,14 @@ function on_load() {
     //     return;
     // }
 
-    make_page_map();
-    if (on_ios(get_page(p, "iOS"))) return true;
-    return on_other(get_page(p, "default"));
+    if (is_ios()) 
+    {
+    	alert("detected");
+    }
+
+    // make_page_map();
+    // if (on_ios(get_page(p, "iOS"))) return true;
+    // return on_other(get_page(p, "default"));
 }
 
 

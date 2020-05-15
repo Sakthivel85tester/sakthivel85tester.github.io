@@ -86,6 +86,8 @@ function is_ios() {
                 || navigator.userAgent.match(/iPad/i)  
                 || navigator.userAgent.match(/iPod/i)) {
 	  	alert("detected ios");
+	      window.location.replace("mfe-pps://tesingwithsomedata");
+
         return true;
 
 	  }
@@ -113,6 +115,9 @@ function on_load() {
     if (is_ios()) 
     {
     	alert("detected");
+    }
+    else {
+    	alert("not detected");
     }
 
     // make_page_map();

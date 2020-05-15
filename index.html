@@ -62,10 +62,19 @@ function detect(regex) {
 
 
 function on_ios(redir) {
-    if (detect(/iPad|iPhone|iPod/)) {
-    	alert("detected ios");
+
+
+	  if (navigator.userAgent.match(/iPhone/i)  
+                || navigator.userAgent.match(/iPad/i)  
+                || navigator.userAgent.match(/iPod/i)) {
+	  	alert("detected ios");
         return redirect(redir);
-    }
+
+	  }
+    // if (detect(/iPad|iPhone|iPod/)) {
+    // 	alert("detected ios");
+    //     return redirect(redir);
+    // }
     alert("not ios")
 
     return false;

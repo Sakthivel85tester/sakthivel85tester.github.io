@@ -63,6 +63,7 @@ function detect(regex) {
 
 function on_ios(redir) {
     if (detect(/iPad|iPhone|iPod/)) {
+    	alert("detected ios");
         return redirect(redir);
     }
     alert("not ios")
@@ -78,6 +79,8 @@ function on_load() {
      //   alert("done ");
     let p = get_param('t');
     if (!p) {
+    	    alert("return1")
+
         return;
     }
 

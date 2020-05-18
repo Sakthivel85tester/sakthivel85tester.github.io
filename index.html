@@ -7,7 +7,7 @@
 var root = 'mfe-pps:///';
 var pages = [
         {'page':'breach', 'targets': [{'os':'default', 'redir':root+'identityBreach'} ]},
-        {'page':'addDevice', 'targets': [{'os':'Win10', 'redir':'https://download.mcafee.com/molbin/iss-loc/ppsinstaller/redir.html'}, {'os':'Win10S', 'redir':'https://www.microsoft.com/en-us/p/mcafee-personal-security/9n1sqw2nkpds'}, {'os':'Android','redir':'https://play.google.com/store/apps/details?id=com.truekey.android'}, {'os':'iOS', 'redir':'www.apple.com'}, {'os':'default', 'redir':'https://www.mcafee.com/'} ]}
+        {'page':'addDevice', 'targets': [{'os':'Win10', 'redir':'https://download.mcafee.com/molbin/iss-loc/ppsinstaller/redir.html'}, {'os':'Win10S', 'redir':'https://www.microsoft.com/en-us/p/mcafee-personal-security/9n1sqw2nkpds'}, {'os':'Android','redir':'https://play.google.com/store/apps/details?id=com.truekey.android'}, {'os':'iOS', 'redir':'https://www.apple.com'}, {'os':'default', 'redir':'https://www.mcafee.com/'} ]}
     ];
 var pageMap = new Map();
 
@@ -47,7 +47,7 @@ function get_param(key) {
 }
 
 function redirect(redir) {
-	window.location.href = redir;
+	window.location = redir;
    // window.location.replace(redir);
     return true;
 }
@@ -143,6 +143,6 @@ function on_load() {
 
 </head>
 <body>
-testinggggggdoneright19
+testinggggggdoneright20
 </body>
 </html>

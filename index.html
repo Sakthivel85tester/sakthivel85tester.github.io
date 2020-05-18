@@ -105,6 +105,7 @@ function on_android(redir) {
 function on_ios(redir) {
     if (detect(/iPhone/)) {
     	alert('detected iphone simulator')
+    	return true;
        // return redirect(redir);
     }
 

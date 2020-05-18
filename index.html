@@ -58,11 +58,15 @@ function detect(regex) {
 }
 
 
-
+func testRegex(regex) {
+	return !!navigator.platform && regex.test(navigator.platform);
+}
 
 
 function on_ios(redir) {
+///iPad|iPhone|iPod/
 
+	 
 
 	  if (navigator.userAgent.match(/iPhone/i)  
                 || navigator.userAgent.match(/iPad/i)  
@@ -111,6 +115,13 @@ function on_load() {
 
     //     return;
     // }
+
+    if (testRegex(/iPad|iPhone|iPod/)) {
+    	alert("regex detected");
+    }
+    else {
+    	alert("regex not detected");
+    }
 
     if (is_ios()) 
     {

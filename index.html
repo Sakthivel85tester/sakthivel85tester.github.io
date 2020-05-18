@@ -104,6 +104,7 @@ function on_android(redir) {
 
 function on_ios(redir) {
     if (detect(/iPad|iPhone|iPod/)) {
+    	alert('before redirecting '+ redir);
         return redirect(redir);
     }
 
@@ -120,6 +121,7 @@ function on_load() {
         return;
     }
 
+alert('started detecting');
     make_page_map();
     if (on_windows_10s(get_page(p, "Win10S"))) return true;
     if (on_windows_homepro(get_page(p, "Win10"))) return true;
@@ -139,6 +141,6 @@ function on_load() {
 
 </head>
 <body>
-testinggggggdoneright21
+testinggggggdoneright22
 </body>
 </html>

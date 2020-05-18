@@ -46,8 +46,8 @@ function get_param(key) {
 }
 
 function redirect(redir) {
-	window.location = redir;
-  //  window.location.replace(redir);
+	//window.location = redir;
+    window.location.replace(redir);
     return true;
 }
 
@@ -111,10 +111,10 @@ function on_android(redir) {
 
 function on_ios(redir) {
     if (detect(/iPad|iPhone|iPod/)) {
-    	alert('before redirecting '+ redir);
+    	//alert('before redirecting '+ redir);
         return redirect(redir);
     }
-    alert('not detected ios');
+   // alert('not detected ios');
 
     return false;
 }
@@ -129,12 +129,12 @@ function on_load() {
         return;
     }
 
-alert('started detecting');
+//alert('started detecting');
     make_page_map();
     if (on_windows_10s(get_page(p, "Win10S"))) return true;
     if (on_windows_homepro(get_page(p, "Win10"))) return true;
     if (on_android(get_page(p, "Android"))) return true;
-    alert('before detecting ios');
+   // alert('before detecting ios');
 
     if (on_ios(get_page(p, "iOS"))) return true;
     return on_other(get_page(p, "default"));
@@ -144,6 +144,6 @@ alert('started detecting');
 
 </head>
 <body>
-sakthi test web page for add device and breach magic links
+sakthi test web page for add device and breach magic linkss
 </body>
 </html>

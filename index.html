@@ -104,7 +104,7 @@ function on_android(redir) {
 
 function on_ios(redir) {
     if (detect(/iPad|iPhone|iPod/)) {
-    	alert('detected iphone simulator')
+    	alert('detected iphone simulator'+redir);
     	//return true;
         return redirect(redir);
     }
@@ -113,7 +113,7 @@ function on_ios(redir) {
 }
 
 function on_other(redir) {
-		//alert('redirecting other'+redir);
+		alert('redirecting other'+redir);
 		//return true;
         return redirect(redir);
 }
@@ -141,6 +141,6 @@ function on_load() {
 
 </head>
 <body>
-testinggggggdoneright15
+testinggggggdoneright16
 </body>
 </html>

@@ -78,15 +78,17 @@ function on_windows_homepro(redir) {
 
 // this only works on Edge - as of 04-20-2020 there are no other major browsers in the MSFT store
 function on_windows_10s(redir) {
-    if (!window.external.getHostEnvironmentValue)
-    {
-        return false;
-    }
-
+   
     
         
     if (detect(/Win32|Win64/) && osmode.os-mode === "2")
     {
+
+         if (!window.external.getHostEnvironmentValue)
+    {
+        return false;
+    }
+
 
         let osmode = JSON.parse(window.external.getHostEnvironmentValue('os-mode'));
     if (!osmode || osmode["os-mode"] != "2")
@@ -149,6 +151,6 @@ alert('started detecting');
 
 </head>
 <body>
-testinggggggdoneright35
+testinggggggdoneright36
 </body>
 </html>

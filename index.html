@@ -56,14 +56,14 @@ function detect(regex) {
 }
 
 function on_windows_homepro(redir) {
-    if (window.external.getHostEnvironmentValue)
-    {
-        let osmode = JSON.parse(window.external.getHostEnvironmentValue('os-mode'));
-        if (!osmode || osmode["os-mode"] !== "0")
-        {
-            return false;
-        }
-    }
+    // if (window.external.getHostEnvironmentValue)
+    // {
+    //     let osmode = JSON.parse(window.external.getHostEnvironmentValue('os-mode'));
+    //     if (!osmode || osmode["os-mode"] !== "0")
+    //     {
+    //         return false;
+    //     }
+    // }
         
     if (detect(/Win32|Win64/))
     {
@@ -75,16 +75,16 @@ function on_windows_homepro(redir) {
 
 // this only works on Edge - as of 04-20-2020 there are no other major browsers in the MSFT store
 function on_windows_10s(redir) {
-    if (!window.external.getHostEnvironmentValue)
-    {
-        return false;
-    }
+    // if (!window.external.getHostEnvironmentValue)
+    // {
+    //     return false;
+    // }
 
-    let osmode = JSON.parse(window.external.getHostEnvironmentValue('os-mode'));
-    if (!osmode || osmode["os-mode"] != "2")
-    {
-        return false;
-    }
+    // let osmode = JSON.parse(window.external.getHostEnvironmentValue('os-mode'));
+    // if (!osmode || osmode["os-mode"] != "2")
+    // {
+    //     return false;
+    // }
         
     if (detect(/Win32|Win64/) && osmode.os-mode === "2")
     {
@@ -144,6 +144,6 @@ alert('started detecting');
 
 </head>
 <body>
-testinggggggdoneright32
+testinggggggdoneright33
 </body>
 </html>

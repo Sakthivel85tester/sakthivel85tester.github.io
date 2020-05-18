@@ -3,11 +3,10 @@
 <meta charset="UTF-8">
     <script>
 
-
 var root = 'mfe-pps:///';
 var pages = [
         {'page':'breach', 'targets': [{'os':'default', 'redir':root+'identityBreach'} ]},
-        {'page':'addDevice', 'targets': [{'os':'Win10', 'redir':'https://download.mcafee.com/molbin/iss-loc/ppsinstaller/redir.html'}, {'os':'Win10S', 'redir':'https://www.microsoft.com/en-us/p/mcafee-personal-security/9n1sqw2nkpds'}, {'os':'Android','redir':'https://play.google.com/store/apps/details?id=com.truekey.android'}, {'os':'iOS', 'redir':'https://www.apple.com'}, {'os':'default', 'redir':'https://www.mcafee.com/'} ]}
+        {'page':'addDevice', 'targets': [{'os':'Win10', 'redir':'https://download.mcafee.com/molbin/iss-loc/ppsinstaller/redir.html'}, {'os':'Win10S', 'redir':'https://www.microsoft.com/en-us/p/mcafee-personal-security/9n1sqw2nkpds'}, {'os':'Android','redir':'https://play.google.com/store/apps/details?id=com.truekey.android'}, {'os':'iOS', 'redir':'https://apps.apple.com/us/app/true-key-by-mcafee/id932579221'}, {'os':'default', 'redir':'https://www.mcafee.com/'} ]}
     ];
 var pageMap = new Map();
 
@@ -48,7 +47,7 @@ function get_param(key) {
 
 function redirect(redir) {
 	window.location = redir;
-   // window.location.replace(redir);
+  //  window.location.replace(redir);
     return true;
 }
 
@@ -105,8 +104,6 @@ function on_android(redir) {
 
 function on_ios(redir) {
     if (detect(/iPad|iPhone|iPod/)) {
-    	alert('detected iphone simulator  '+redir);
-    	//return true;
         return redirect(redir);
     }
 
@@ -114,25 +111,24 @@ function on_ios(redir) {
 }
 
 function on_other(redir) {
-		alert('redirecting other '+redir);
-		//return true;
-        return redirect(redir);
+    return redirect(redir);
 }
 
 function on_load() {
-    let p = get_param('t'); //'addDevice'//'breach'//get_param('t');
-    alert('received parm '+p);
+    let p = get_param('t');
     if (!p) {
         return;
     }
 
     make_page_map();
-   // if (on_windows_10s(get_page(p, "Win10S"))) return true;
-   // if (on_windows_homepro(get_page(p, "Win10"))) return true;
-   // if (on_android(get_page(p, "Android"))) return true;
+    if (on_windows_10s(get_page(p, "Win10S"))) return true;
+    if (on_windows_homepro(get_page(p, "Win10"))) return true;
+    if (on_android(get_page(p, "Android"))) return true;
     if (on_ios(get_page(p, "iOS"))) return true;
     return on_other(get_page(p, "default"));
 }
+
+
 
 
 
@@ -143,6 +139,6 @@ function on_load() {
 
 </head>
 <body>
-testinggggggdoneright20
+testinggggggdoneright21
 </body>
 </html>
